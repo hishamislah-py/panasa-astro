@@ -20,7 +20,7 @@ export function WordStack({
       <style jsx>{`
         .word-stack-container {
           width: 100%;
-          padding: 4rem 2rem;
+          padding: 2rem 1rem;
           background: transparent;
           display: flex;
           justify-content: center;
@@ -31,7 +31,7 @@ export function WordStack({
           list-style: none;
           padding: 0;
           margin: 0;
-          font-size: clamp(2.5rem, 8vw, 6rem);
+          font-size: clamp(1.5rem, 5vw, 3.5rem);
           font-weight: 600;
           line-height: 1.2;
         }
