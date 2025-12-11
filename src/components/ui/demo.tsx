@@ -10,21 +10,37 @@ export default function Component({ children }: ComponentProps) {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="min-h-screen w-full relative" style={{ background: '#0a1f1a' }}>
-      {/* Grid Background Pattern */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, rgba(16, 185, 129, 0.1) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(16, 185, 129, 0.1) 1px, transparent 1px)
-          `,
-          backgroundSize: "40px 40px",
-        }}
-      />
+    <div className="w-full relative">
+      {/* Extended Background Container */}
+      <div className="absolute inset-0 w-full" style={{ minHeight: '200vh' }}>
+        {/* Top Half: Dark Green with Grid */}
+        <div className="absolute top-0 left-0 w-full" style={{ height: '100vh', background: '#0a1f1a' }}>
+          {/* Grid Background Pattern */}
+          <div
+            className="absolute inset-0 w-full"
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, rgba(16, 185, 129, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(16, 185, 129, 0.1) 1px, transparent 1px)
+              `,
+              backgroundSize: "40px 40px",
+            }}
+          />
+        </div>
+
+        {/* Bottom Half: Solid Mint Color */}
+        <div
+          className="absolute left-0 w-full"
+          style={{
+            top: '100vh',
+            minHeight: '100vh',
+            background: '#DDF8E7'
+          }}
+        />
+      </div>
 
       {/* 3D Carousel Background - Full Hero Section */}
-      <div className="absolute top-0 left-0 w-full h-screen z-[1]">
+      <div className="absolute top-0 left-0 w-full h-screen z-[2]">
         <ScannerCardStream
           cardImages={[
             "/images/689f20b55e654d1341fb06f8_4.1.png",
@@ -41,7 +57,9 @@ export default function Component({ children }: ComponentProps) {
       </div>
 
       {/* Your Content/Components */}
-      {children}
+      <div className="relative z-10">
+        {children}
+      </div>
     </div>
   );
 }

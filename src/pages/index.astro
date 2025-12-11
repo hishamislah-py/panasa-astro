@@ -1,8 +1,8 @@
 ---
 import '../styles/global.css';
 import Demo from '../components/ui/demo';
-import { WordStack } from '../components/ui/word-stack';
 import { SpotlightCard } from '../components/ui/spotlight-card';
+import { InfiniteSlider } from '../components/ui/infinite-slider';
 import { Layers, ShieldCheck, Zap, TrendingUp } from 'lucide-react';
 ---
 
@@ -64,65 +64,72 @@ import { Layers, ShieldCheck, Zap, TrendingUp } from 'lucide-react';
 					</div>
 				</main>
 
-				<!-- Word Stack Section -->
-				<div class="w-full bg-[#DDF8E7]">
-					<WordStack
-						client:load
-						items={['prototype.', 'solve.', 'build.', 'develop.', 'innovate.', 'transform.']}
-					/>
-				</div>
-
 				<!-- Platform Features Section -->
-				<section class="w-full py-20 bg-black">
+				<section class="w-full py-20 bg-transparent relative">
 					<div class="max-w-6xl mx-auto px-6 md:px-12">
 						<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+							<style>
+								.spotlight-3d-card {
+									transform-style: preserve-3d;
+									transition: transform 0.3s ease, box-shadow 0.3s ease;
+									box-shadow:
+										0 10px 30px rgba(12, 47, 30, 0.15),
+										0 5px 15px rgba(12, 47, 30, 0.1);
+								}
+								.spotlight-3d-card:hover {
+									transform: translateY(-8px) scale(1.02);
+									box-shadow:
+										0 20px 50px rgba(12, 47, 30, 0.2),
+										0 10px 25px rgba(255, 174, 155, 0.15);
+								}
+							</style>
 							<!-- Card 1: Flexible Account Structures -->
-							<SpotlightCard client:load className="p-6 h-full flex flex-col gap-4">
-								<div class="h-10 w-10 flex items-center justify-center rounded-lg bg-neutral-800 border border-neutral-700">
-									<Layers className="text-white h-5 w-5" />
+							<SpotlightCard client:load className="spotlight-3d-card p-6 h-full flex flex-col gap-4 !bg-white !border-gray-200 !text-gray-900" spotlightColor="rgba(255, 174, 155, 0.15)">
+								<div class="h-12 w-12 flex items-center justify-center rounded-lg bg-[#ffae9b]/10 border border-[#ffae9b]/30">
+									<Layers className="text-[#0C2F1E] h-6 w-6" />
 								</div>
 								<div>
-									<h3 class="text-lg font-semibold text-white mb-2">Flexible Account Structures</h3>
-									<p class="text-sm text-neutral-400">
+									<h3 class="text-lg font-semibold text-[#0C2F1E] mb-2">Flexible Account Structures</h3>
+									<p class="text-sm text-gray-600 leading-relaxed">
 										Our platform was designed to work with any business type and model, supporting your unique needs.
 									</p>
 								</div>
 							</SpotlightCard>
 
 							<!-- Card 2: Full Program Management -->
-							<SpotlightCard client:load className="p-6 h-full flex flex-col gap-4" spotlightColor="rgba(14, 165, 233, 0.25)">
-								<div class="h-10 w-10 flex items-center justify-center rounded-lg bg-sky-900/20 border border-sky-800/50">
-									<ShieldCheck className="text-sky-400 h-5 w-5" />
+							<SpotlightCard client:load className="spotlight-3d-card p-6 h-full flex flex-col gap-4 !bg-white !border-gray-200 !text-gray-900" spotlightColor="rgba(255, 174, 155, 0.15)">
+								<div class="h-12 w-12 flex items-center justify-center rounded-lg bg-[#0C2F1E]/10 border border-[#0C2F1E]/30">
+									<ShieldCheck className="text-[#0C2F1E] h-6 w-6" />
 								</div>
 								<div>
-									<h3 class="text-lg font-semibold text-white mb-2">Full Program Management</h3>
-									<p class="text-sm text-neutral-400">
+									<h3 class="text-lg font-semibold text-[#0C2F1E] mb-2">Full Program Management</h3>
+									<p class="text-sm text-gray-600 leading-relaxed">
 										We are with you every step of the way, from implementation to ongoing program optimization.
 									</p>
 								</div>
 							</SpotlightCard>
 
 							<!-- Card 3: World-Class Dashboard -->
-							<SpotlightCard client:load className="p-6 h-full flex flex-col gap-4" spotlightColor="rgba(168, 85, 247, 0.25)">
-								<div class="h-10 w-10 flex items-center justify-center rounded-lg bg-purple-900/20 border border-purple-800/50">
-									<Zap className="text-purple-400 h-5 w-5" />
+							<SpotlightCard client:load className="spotlight-3d-card p-6 h-full flex flex-col gap-4 !bg-white !border-gray-200 !text-gray-900" spotlightColor="rgba(255, 174, 155, 0.15)">
+								<div class="h-12 w-12 flex items-center justify-center rounded-lg bg-[#ffae9b]/10 border border-[#ffae9b]/30">
+									<Zap className="text-[#ffae9b] h-6 w-6" />
 								</div>
 								<div>
-									<h3 class="text-lg font-semibold text-white mb-2">World-Class Dashboard</h3>
-									<p class="text-sm text-neutral-400">
+									<h3 class="text-lg font-semibold text-[#0C2F1E] mb-2">World-Class Dashboard</h3>
+									<p class="text-sm text-gray-600 leading-relaxed">
 										Streamline your operations and support your customers from our user-friendly Dashboard.
 									</p>
 								</div>
 							</SpotlightCard>
 
 							<!-- Card 4: Designed for Scale -->
-							<SpotlightCard client:load className="p-6 h-full flex flex-col gap-4" spotlightColor="rgba(16, 185, 129, 0.25)">
-								<div class="h-10 w-10 flex items-center justify-center rounded-lg bg-emerald-900/20 border border-emerald-800/50">
-									<TrendingUp className="text-emerald-400 h-5 w-5" />
+							<SpotlightCard client:load className="spotlight-3d-card p-6 h-full flex flex-col gap-4 !bg-white !border-gray-200 !text-gray-900" spotlightColor="rgba(255, 174, 155, 0.15)">
+								<div class="h-12 w-12 flex items-center justify-center rounded-lg bg-[#0C2F1E]/10 border border-[#0C2F1E]/30">
+									<TrendingUp className="text-[#0C2F1E] h-6 w-6" />
 								</div>
 								<div>
-									<h3 class="text-lg font-semibold text-white mb-2">Designed for Scale</h3>
-									<p class="text-sm text-neutral-400">
+									<h3 class="text-lg font-semibold text-[#0C2F1E] mb-2">Designed for Scale</h3>
+									<p class="text-sm text-gray-600 leading-relaxed">
 										Our secure platform scales with you and is trusted by developers, startups, and large corporations.
 									</p>
 								</div>
@@ -131,67 +138,63 @@ import { Layers, ShieldCheck, Zap, TrendingUp } from 'lucide-react';
 					</div>
 				</section>
 
-				<!-- Aesthetic Wave Separator -->
-				<div class="relative w-full overflow-hidden bg-[#DDF8E7]">
-					<svg
-						class="w-full"
-						viewBox="0 0 1440 120"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
-						preserveAspectRatio="none"
-						style="display: block;"
-					>
-						<!-- Smooth wave transition -->
-						<path
-							d="M0,40 Q360,10 720,40 T1440,40 L1440,120 L0,120 Z"
-							fill="white"
-						/>
-					</svg>
-				</div>
+				<!-- Partners & Purpose Section -->
+				<section class="w-full py-20 bg-[#f5f5dc]">
+					<div class="max-w-7xl mx-auto px-6 md:px-12">
+						<!-- Header Text -->
+						<div class="text-center mb-16">
+							<p class="text-lg md:text-xl text-gray-800 font-medium mb-2">
+								Powering modern payment solutions.
+							</p>
+							<p class="text-lg md:text-xl text-gray-800 font-medium">
+								From visionary startups to industry leaders.
+							</p>
+						</div>
 
-				<!-- Features Section -->
-				<main class="px-6 md:px-12 bg-white">
-					<div class="max-w-7xl mx-auto w-full py-20">
-						<!-- Features Grid -->
-						<div class="grid md:grid-cols-3 gap-8 mt-24">
-							<div class="p-8 bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200 hover:border-[#0C2F1E]/30 hover:shadow-xl transition-all">
-								<div class="w-12 h-12 bg-[#0C2F1E]/10 rounded-lg flex items-center justify-center mb-4">
-									<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#0C2F1E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-									</svg>
+						<!-- Company Logos Carousel -->
+						<div class="mb-20">
+							<InfiniteSlider client:load gap={48} duration={30} reverse className="py-8">
+								<div class="flex items-center justify-center h-[80px] px-8">
+									<span class="text-3xl font-bold text-gray-900">AtoB</span>
 								</div>
-								<h3 class="text-xl font-bold text-gray-900 mb-2">Lightning Fast</h3>
-								<p class="text-gray-600">
-									Built with Astro for optimal performance and blazing fast load times.
+								<div class="flex items-center justify-center h-[80px] px-8">
+									<span class="text-3xl font-bold text-gray-900">Gynger</span>
+								</div>
+								<div class="flex items-center justify-center h-[80px] px-8">
+									<span class="text-3xl font-bold text-gray-900">SpotOn</span>
+								</div>
+								<div class="flex items-center justify-center h-[80px] px-8">
+									<span class="text-3xl font-bold text-gray-900">GiveCard</span>
+								</div>
+								<div class="flex items-center justify-center h-[80px] px-8">
+									<span class="text-3xl font-bold text-gray-900">MUDFLAP</span>
+								</div>
+								<div class="flex items-center justify-center h-[80px] px-8">
+									<span class="text-3xl font-bold text-gray-900">splitit</span>
+								</div>
+								<div class="flex items-center justify-center h-[80px] px-8">
+									<span class="text-3xl font-bold text-gray-900">NETEVIA</span>
+								</div>
+							</InfiniteSlider>
+						</div>
+
+						<!-- Main Purpose Heading -->
+						<div class="text-center mb-12">
+							<h2 class="text-5xl md:text-7xl font-bold text-gray-900 leading-tight mb-8">
+								A Purpose Built<br />
+								<span class="text-gray-900">Payments Platform</span>
+							</h2>
+							<div class="max-w-3xl mx-auto">
+								<p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-2">
+									Built for innovators seeking a better payments solution.
 								</p>
-							</div>
-
-							<div class="p-8 bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200 hover:border-[#0C2F1E]/30 hover:shadow-xl transition-all">
-								<div class="w-12 h-12 bg-[#0C2F1E]/10 rounded-lg flex items-center justify-center mb-4">
-									<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#0C2F1E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-									</svg>
-								</div>
-								<h3 class="text-xl font-bold text-gray-900 mb-2">Beautiful Design</h3>
-								<p class="text-gray-600">
-									Crafted with Tailwind CSS for stunning, responsive designs.
-								</p>
-							</div>
-
-							<div class="p-8 bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200 hover:border-[#0C2F1E]/30 hover:shadow-xl transition-all">
-								<div class="w-12 h-12 bg-[#0C2F1E]/10 rounded-lg flex items-center justify-center mb-4">
-									<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#0C2F1E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-									</svg>
-								</div>
-								<h3 class="text-xl font-bold text-gray-900 mb-2">Developer Friendly</h3>
-								<p class="text-gray-600">
-									TypeScript, React, and modern tooling for the best developer experience.
+								<p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+									Highnote helps reduce costs, drive revenue, and optimize your business for success.
 								</p>
 							</div>
 						</div>
 					</div>
-				</main>
+				</section>
 
 				<!-- Footer -->
 				<footer class="w-full px-6 py-8 md:px-12 border-t border-gray-200 bg-white/50 backdrop-blur-sm">
