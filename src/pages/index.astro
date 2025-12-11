@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Demo from '../components/ui/demo';
+import { WordHeroPage } from '../components/ui/scroll-hero-section';
 ---
 
 <html lang="en">
@@ -36,8 +37,8 @@ import Demo from '../components/ui/demo';
 				</header>
 
 				<!-- Hero Section -->
-				<main class="flex-1 flex items-center justify-center px-6 md:px-12">
-					<div class="max-w-7xl mx-auto w-full py-20">
+				<main class="flex items-center justify-center px-6 md:px-12">
+					<div class="max-w-7xl mx-auto w-full py-12">
 						<div class="text-center space-y-8 pt-17">
 							<h1 class="text-5xl md:text-7xl font-bold text-[#ffae9b] leading-tight">
 								Building Better FinTech.
@@ -58,7 +59,45 @@ import Demo from '../components/ui/demo';
 								</button>
 							</div>
 						</div>
+					</div>
+				</main>
 
+				<!-- Scroll Hero Section -->
+				<div class="scroll-hero-wrapper">
+					<WordHeroPage
+						client:load
+						items={['prototype.', 'solve.', 'build.', 'develop.', 'innovate.', 'transform.']}
+						theme="dark"
+						animate={true}
+						hue={280}
+						startVh={30}
+						spaceVh={20}
+						debug={false}
+						taglineHTML=""
+					/>
+				</div>
+
+				<!-- Aesthetic Wave Separator -->
+				<div class="relative w-full overflow-hidden bg-[#DDF8E7]">
+					<svg
+						class="w-full"
+						viewBox="0 0 1440 120"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+						preserveAspectRatio="none"
+						style="display: block;"
+					>
+						<!-- Smooth wave transition -->
+						<path
+							d="M0,40 Q360,10 720,40 T1440,40 L1440,120 L0,120 Z"
+							fill="white"
+						/>
+					</svg>
+				</div>
+
+				<!-- Features Section -->
+				<main class="px-6 md:px-12 bg-white">
+					<div class="max-w-7xl mx-auto w-full py-20">
 						<!-- Features Grid -->
 						<div class="grid md:grid-cols-3 gap-8 mt-24">
 							<div class="p-8 bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200 hover:border-[#0C2F1E]/30 hover:shadow-xl transition-all">
