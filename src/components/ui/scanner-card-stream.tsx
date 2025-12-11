@@ -451,7 +451,7 @@ const ScannerCardStream = ({
           ${isScanning ? 'opacity-100' : 'opacity-0'}
         `}
         style={{
-          top: 'calc(25% + 40px)',
+          top: 'calc(25% - 80px)',
           transform: 'translate(-50%, -50%)',
           boxShadow: `
             0 0 10px #a78bfa, 0 0 20px #a78bfa,
