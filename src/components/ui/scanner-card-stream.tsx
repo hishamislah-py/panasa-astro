@@ -435,12 +435,12 @@ const ScannerCardStream = ({
       <canvas
         ref={particleCanvasRef}
         className="absolute left-0 w-screen h-[250px] z-0 pointer-events-none"
-        style={{ top: 'calc(25% + 40px)', transform: 'translateY(-50%)' }}
+        style={{ top: 'calc(25% + 160px)', transform: 'translateY(-50%)' }}
       />
       <canvas
         ref={scannerCanvasRef}
         className="absolute left-0 w-screen h-[300px] z-10 pointer-events-none"
-        style={{ top: 'calc(25% + 40px)', transform: 'translateY(-50%)' }}
+        style={{ top: 'calc(25% + 160px)', transform: 'translateY(-50%)' }}
       />
 
       <div
@@ -451,7 +451,7 @@ const ScannerCardStream = ({
           ${isScanning ? 'opacity-100' : 'opacity-0'}
         `}
         style={{
-          top: 'calc(25% - 80px)',
+          top: 'calc(25% + 40px)',
           transform: 'translate(-50%, -50%)',
           boxShadow: `
             0 0 10px #a78bfa, 0 0 20px #a78bfa,
@@ -459,7 +459,7 @@ const ScannerCardStream = ({
         }}
       />
 
-      <div className="absolute w-screen h-[250px] flex items-center" style={{ top: 'calc(25% + 40px)', transform: 'translateY(-50%)' }}>
+      <div className="absolute w-screen h-[250px] flex items-center" style={{ top: 'calc(25% + 160px)', transform: 'translateY(-50%)' }}>
         <div
           ref={cardLineRef}
           className="flex items-center whitespace-nowrap cursor-grab active:cursor-grabbing select-none will-change-transform"

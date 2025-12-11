@@ -27,11 +27,9 @@ export default function Component({ children }: ComponentProps) {
       <div className="absolute top-0 left-0 w-full h-screen z-[1]">
         <ScannerCardStream
           cardImages={[
-            "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=250&fit=crop",
-            "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=250&fit=crop",
-            "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=400&h=250&fit=crop",
-            "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=250&fit=crop",
-            "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=400&h=250&fit=crop",
+            "/images/689f20b55e654d1341fb06f8_4.1.png",
+            "/images/689f20b5c1e4919fd69672b8_3.png",
+            "/images/689f20b5bea2f1b07392d936_4.png",
           ]}
           showControls={false}
           showSpeed={false}
@@ -52,11 +50,9 @@ export function DemoScanner() {
   return (
     <ScannerCardStream
       cardImages={[
-        "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=250&fit=crop",
-        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=250&fit=crop",
-        "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=400&h=250&fit=crop",
-        "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=250&fit=crop",
-        "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=400&h=250&fit=crop",
+        "/images/689f20b55e654d1341fb06f8_4.1.png",
+        "/images/689f20b5c1e4919fd69672b8_3.png",
+        "/images/689f20b5bea2f1b07392d936_4.png",
       ]}
       showControls={false}
       showSpeed={false}
