@@ -9,14 +9,14 @@ export default function Component({ children }: ComponentProps) {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="min-h-screen w-full bg-[#f9fafb] relative">
+    <div className="min-h-screen w-full bg-[#0C2F1E] relative">
       {/* Diagonal Fade Grid Background - Top Left */}
       <div
         className="absolute inset-0 z-0"
         style={{
           backgroundImage: `
-            linear-gradient(to right, #8bd698ff 1px, transparent 1px),
-            linear-gradient(to bottom, #8bd698ff 1px, transparent 1px)
+            linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
           `,
           backgroundSize: "32px 32px",
           WebkitMaskImage:
