@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { useState, type ReactNode } from "react";
+import { ScannerCardStream } from "@/components/ui/scanner-card-stream";
 
 interface ComponentProps {
   children?: ReactNode;
@@ -35,5 +36,25 @@ export default function Component({ children }: ComponentProps) {
       {/* Your Content/Components */}
       {children}
     </div>
+  );
+}
+
+export function DemoScanner() {
+  return (
+    <ScannerCardStream
+      cardImages={[
+        "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=250&fit=crop",
+        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=250&fit=crop",
+        "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=400&h=250&fit=crop",
+        "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=250&fit=crop",
+        "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=400&h=250&fit=crop",
+      ]}
+      showControls={false}
+      showSpeed={false}
+      initialSpeed={120}
+      friction={0.95}
+      scanEffect="scramble"
+      repeat={6}
+    />
   );
 }

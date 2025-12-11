@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Demo from '../components/ui/demo';
 import { WordHeroPage } from '../components/ui/scroll-hero-section';
+import { DemoScanner } from '../components/ui/demo';
 ---
 
 <html lang="en">
@@ -75,6 +76,11 @@ import { WordHeroPage } from '../components/ui/scroll-hero-section';
 						debug={false}
 						taglineHTML=""
 					/>
+				</div>
+
+				<!-- Scanner Card Stream Section -->
+				<div class="scanner-section w-full h-screen relative">
+					<DemoScanner client:load />
 				</div>
 
 				<!-- Aesthetic Wave Separator -->
