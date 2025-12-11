@@ -1,5 +1,6 @@
 ---
-
+import '../styles/global.css';
+import Demo from '../components/ui/demo';
 ---
 
 <html lang="en">
@@ -8,9 +9,114 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Panasa - Modern Web Experience</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="m-0 p-0 overflow-x-hidden">
+		<Demo client:load>
+			<div class="relative z-10 min-h-screen flex flex-col">
+				<!-- Header -->
+				<header class="w-full px-6 py-6 md:px-12 md:py-8">
+					<nav class="max-w-7xl mx-auto flex items-center justify-between">
+						<div class="flex items-center space-x-2">
+							<div class="w-10 h-10 bg-[#0C2F1E] rounded-lg flex items-center justify-center">
+								<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+								</svg>
+							</div>
+							<span class="text-2xl font-bold text-[#0C2F1E]">Panasa</span>
+						</div>
+						<div class="hidden md:flex items-center space-x-8">
+							<a href="#features" class="text-gray-700 hover:text-[#0C2F1E] transition-colors">Features</a>
+							<a href="#about" class="text-gray-700 hover:text-[#0C2F1E] transition-colors">About</a>
+							<a href="#contact" class="text-gray-700 hover:text-[#0C2F1E] transition-colors">Contact</a>
+							<button class="px-6 py-2 bg-[#0C2F1E] text-white rounded-lg hover:bg-[#0a2518] transition-colors">
+								Get Started
+							</button>
+						</div>
+					</nav>
+				</header>
+
+				<!-- Hero Section -->
+				<main class="flex-1 flex items-center justify-center px-6 md:px-12">
+					<div class="max-w-7xl mx-auto w-full py-20">
+						<div class="text-center space-y-8">
+							<div class="inline-block px-4 py-2 bg-[#0C2F1E]/10 border border-[#0C2F1E]/20 rounded-full text-[#0C2F1E] text-sm font-medium mb-6">
+								Modern Web Development
+							</div>
+							<h1 class="text-5xl md:text-7xl font-bold text-gray-900 leading-tight">
+								Build Beautiful
+								<br />
+								<span class="text-[#0C2F1E]">Web Experiences</span>
+							</h1>
+							<p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+								Create stunning, performant websites with modern tools and frameworks.
+								Built with Astro, React, and Tailwind CSS.
+							</p>
+							<div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
+								<button class="px-8 py-4 bg-[#0C2F1E] text-white rounded-lg hover:bg-[#0a2518] transition-all hover:scale-105 font-semibold text-lg shadow-lg shadow-[#0C2F1E]/20">
+									Start Building
+								</button>
+								<button class="px-8 py-4 bg-white text-[#0C2F1E] border-2 border-[#0C2F1E] rounded-lg hover:bg-[#0C2F1E]/5 transition-all font-semibold text-lg">
+									Learn More
+								</button>
+							</div>
+						</div>
+
+						<!-- Features Grid -->
+						<div class="grid md:grid-cols-3 gap-8 mt-24">
+							<div class="p-8 bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200 hover:border-[#0C2F1E]/30 hover:shadow-xl transition-all">
+								<div class="w-12 h-12 bg-[#0C2F1E]/10 rounded-lg flex items-center justify-center mb-4">
+									<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#0C2F1E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+									</svg>
+								</div>
+								<h3 class="text-xl font-bold text-gray-900 mb-2">Lightning Fast</h3>
+								<p class="text-gray-600">
+									Built with Astro for optimal performance and blazing fast load times.
+								</p>
+							</div>
+
+							<div class="p-8 bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200 hover:border-[#0C2F1E]/30 hover:shadow-xl transition-all">
+								<div class="w-12 h-12 bg-[#0C2F1E]/10 rounded-lg flex items-center justify-center mb-4">
+									<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#0C2F1E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+									</svg>
+								</div>
+								<h3 class="text-xl font-bold text-gray-900 mb-2">Beautiful Design</h3>
+								<p class="text-gray-600">
+									Crafted with Tailwind CSS for stunning, responsive designs.
+								</p>
+							</div>
+
+							<div class="p-8 bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200 hover:border-[#0C2F1E]/30 hover:shadow-xl transition-all">
+								<div class="w-12 h-12 bg-[#0C2F1E]/10 rounded-lg flex items-center justify-center mb-4">
+									<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#0C2F1E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+									</svg>
+								</div>
+								<h3 class="text-xl font-bold text-gray-900 mb-2">Developer Friendly</h3>
+								<p class="text-gray-600">
+									TypeScript, React, and modern tooling for the best developer experience.
+								</p>
+							</div>
+						</div>
+					</div>
+				</main>
+
+				<!-- Footer -->
+				<footer class="w-full px-6 py-8 md:px-12 border-t border-gray-200 bg-white/50 backdrop-blur-sm">
+					<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+						<p class="text-gray-600 text-sm">
+							© 2025 Panasa. Built with Astro, React & Tailwind CSS.
+						</p>
+						<div class="flex items-center gap-6">
+							<a href="#" class="text-gray-600 hover:text-[#0C2F1E] transition-colors">GitHub</a>
+							<a href="#" class="text-gray-600 hover:text-[#0C2F1E] transition-colors">Twitter</a>
+							<a href="#" class="text-gray-600 hover:text-[#0C2F1E] transition-colors">LinkedIn</a>
+						</div>
+					</div>
+				</footer>
+			</div>
+		</Demo>
 	</body>
 </html>
