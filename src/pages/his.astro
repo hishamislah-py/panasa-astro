@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { InfiniteGridBackground } from '../components/ui/infinite-grid-background';
 import { SpotlightCard } from '../components/ui/spotlight-card';
 import { InfiniteSlider } from '../components/ui/infinite-slider';
+import { HorizontalCards } from '../components/ui/horizontal-cards';
 import { Layers, ShieldCheck, Zap, TrendingUp } from 'lucide-react';
 ---
 
@@ -207,6 +208,9 @@ import { Layers, ShieldCheck, Zap, TrendingUp } from 'lucide-react';
 						</div>
 					</div>
 				</section>
+
+				<!-- Horizontal Scrolling Cards Section -->
+				<HorizontalCards client:load />
 
 				<!-- Footer -->
 				<footer class="w-full px-6 py-8 md:px-12 border-t border-gray-200 bg-white/50 backdrop-blur-sm">
