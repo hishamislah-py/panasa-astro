@@ -7,7 +7,8 @@ import { cn } from "@/lib/utils";
 // Define the properties for the ProductHighlightCard component
 interface ProductHighlightCardProps extends React.HTMLAttributes<HTMLDivElement> {
   categoryIcon?: React.ReactNode;
-  category: string;
+  categoryLogoSrc?: string;
+  category?: string;
   title: string;
   description: string;
   imageSrc: string;
@@ -15,7 +16,7 @@ interface ProductHighlightCardProps extends React.HTMLAttributes<HTMLDivElement>
 }
 
 export const ProductHighlightCard = React.forwardRef<HTMLDivElement, ProductHighlightCardProps>(
-  ({ className, categoryIcon, category, title, description, imageSrc, imageAlt, ...props }, ref) => {
+  ({ className, categoryIcon, categoryLogoSrc, category, title, description, imageSrc, imageAlt, ...props }, ref) => {
 
     // --- Animation Logic for 3D Tilt Effect ---
     const mouseX = useMotionValue(0);
@@ -77,8 +78,14 @@ export const ProductHighlightCard = React.forwardRef<HTMLDivElement, ProductHigh
           <div className="relative z-10 flex h-full flex-col justify-between p-6">
             {/* Category */}
             <div className="flex items-center space-x-2 text-gray-900">
-              {categoryIcon && categoryIcon}
-              <span className="text-sm font-medium">{category}</span>
+              {categoryLogoSrc ? (
+                <img src={categoryLogoSrc} alt="Logo" className="h-8 w-auto" />
+              ) : (
+                <>
+                  {categoryIcon && categoryIcon}
+                  {category && <span className="text-sm font-medium">{category}</span>}
+                </>
+              )}
             </div>
 
             {/* Title and Description */}
