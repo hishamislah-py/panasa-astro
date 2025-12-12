@@ -4,6 +4,7 @@ import { InfiniteGridBackground } from '../components/ui/infinite-grid-backgroun
 import { SpotlightCard } from '../components/ui/spotlight-card';
 import { InfiniteSlider } from '../components/ui/infinite-slider';
 import { HorizontalCards } from '../components/ui/horizontal-cards';
+import { ProductHighlightCard } from '../components/ui/product-card';
 import { Layers, ShieldCheck, Zap, TrendingUp } from 'lucide-react';
 ---
 
@@ -47,21 +48,36 @@ import { Layers, ShieldCheck, Zap, TrendingUp } from 'lucide-react';
 					</svg>
 
 					<div class="max-w-7xl mx-auto w-full py-4 relative z-10">
-						<div class="max-w-2xl space-y-8">
-							<h1 class="text-5xl md:text-7xl text-[#0C2F1E] leading-tight" style="font-family: 'Helvetica Now Display', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 400;">
-								Building Better FinTech.
-							</h1>
-							<p class="text-xl md:text-2xl text-gray-700 font-light" style="font-family: 'Poppins', sans-serif;">
-								Panasa is a fintech development company that helps
-								companies competitively innovate existing tech, design and build new products, and test-run new ideas.
-							</p>
-							<div class="flex flex-col sm:flex-row items-start gap-4 pt-4">
-								<button class="px-8 py-4 bg-[#0C2F1E] text-white rounded-lg hover:bg-[#ffae9b] hover:text-white transition-all hover:scale-105 font-semibold text-lg shadow-lg">
-									Start Building
-								</button>
-								<button class="px-8 py-4 bg-transparent text-[#0C2F1E] border-2 border-[#0C2F1E] rounded-lg hover:bg-[#0C2F1E] hover:text-white transition-all font-semibold text-lg">
-									Learn More
-								</button>
+						<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+							<!-- Left side - Text content -->
+							<div class="max-w-2xl space-y-8">
+								<h1 class="text-5xl md:text-7xl text-[#0C2F1E] leading-tight" style="font-family: 'Helvetica Now Display', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 400;">
+									Building Better FinTech.
+								</h1>
+								<p class="text-xl md:text-2xl text-gray-700 font-light" style="font-family: 'Poppins', sans-serif;">
+									Panasa is a fintech development company that helps
+									companies competitively innovate existing tech, design and build new products, and test-run new ideas.
+								</p>
+								<div class="flex flex-col sm:flex-row items-start gap-4 pt-4">
+									<button class="px-8 py-4 bg-[#0C2F1E] text-white rounded-lg hover:bg-[#ffae9b] hover:text-white transition-all hover:scale-105 font-semibold text-lg shadow-lg">
+										Start Building
+									</button>
+									<button class="px-8 py-4 bg-transparent text-[#0C2F1E] border-2 border-[#0C2F1E] rounded-lg hover:bg-[#0C2F1E] hover:text-white transition-all font-semibold text-lg">
+										Learn More
+									</button>
+								</div>
+							</div>
+
+							<!-- Right side - Product Card -->
+							<div class="flex justify-center lg:justify-end">
+								<ProductHighlightCard
+									client:load
+									category="Payment Solutions"
+										title="Card Issuing"
+									description="Fast, secure, and scalable payment solutions for modern businesses. Built for growth and reliability."
+									imageSrc="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&q=80"
+									imageAlt="Credit card payment solution"
+								/>
 							</div>
 						</div>
 					</div>
