@@ -1,0 +1,102 @@
+import React, { useRef } from "react";
+import { cn } from "@/lib/utils";
+import {
+  motion,
+  useMotionValue,
+  useMotionTemplate,
+  useAnimationFrame,
+  MotionValue
+} from "framer-motion";
+
+interface InfiniteGridBackgroundProps {
+  children?: React.ReactNode;
+  className?: string;
+}
+
+export const InfiniteGridBackground = ({ children, className }: InfiniteGridBackgroundProps) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (containerRef.current) {
+      const { left, top } = containerRef.current.getBoundingClientRect();
+      mouseX.set(e.clientX - left);
+      mouseY.set(e.clientY - top);
+    }
+  };
+
+  const gridOffsetX = useMotionValue(0);
+  const gridOffsetY = useMotionValue(0);
+
+  const speedX = 0.5;
+  const speedY = 0.5;
+
+  useAnimationFrame(() => {
+    const currentX = gridOffsetX.get();
+    const currentY = gridOffsetY.get();
+    gridOffsetX.set((currentX + speedX) % 40);
+    gridOffsetY.set((currentY + speedY) % 40);
+  });
+
+  const maskImage = useMotionTemplate`radial-gradient(400px circle at ${mouseX}px ${mouseY}px, black, transparent)`;
+
+  return (
+    <div
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      className={cn("relative w-full", className)}
+      style={{ minHeight: "100vh" }}
+    >
+      {/* Base Grid Layer */}
+      <div className="absolute inset-0 z-0 opacity-[0.08]">
+        <GridPattern offsetX={gridOffsetX} offsetY={gridOffsetY} patternId="grid-base" />
+      </div>
+
+      {/* Mouse Interactive Grid Layer */}
+      <motion.div
+        className="absolute inset-0 z-0 opacity-50"
+        style={{ maskImage, WebkitMaskImage: maskImage }}
+      >
+        <GridPattern offsetX={gridOffsetX} offsetY={gridOffsetY} patternId="grid-interactive" />
+      </motion.div>
+
+      {/* Soft Gradient Overlays */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <div className="absolute right-[-10%] top-[-10%] w-[30%] h-[30%] rounded-full bg-emerald-500/20 blur-[100px]" />
+        <div className="absolute left-[-10%] bottom-[-10%] w-[30%] h-[30%] rounded-full bg-teal-500/20 blur-[100px]" />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10">
+        {children}
+      </div>
+    </div>
+  );
+};
+
+const GridPattern = ({ offsetX, offsetY, patternId }: { offsetX: MotionValue<number>, offsetY: MotionValue<number>, patternId: string }) => {
+  return (
+    <svg className="w-full h-full">
+      <defs>
+        <motion.pattern
+          id={patternId}
+          width="40"
+          height="40"
+          patternUnits="userSpaceOnUse"
+          x={offsetX}
+          y={offsetY}
+        >
+          <path
+            d="M 40 0 L 0 0 0 40"
+            fill="none"
+            stroke="#063622"
+            strokeWidth="1"
+          />
+        </motion.pattern>
+      </defs>
+      <rect width="100%" height="100%" fill={`url(#${patternId})`} />
+    </svg>
+  );
+};
