@@ -66,83 +66,21 @@ import { Layers, ShieldCheck, Zap, TrendingUp } from 'lucide-react';
 					</div>
 				</main>
 
-				<!-- Platform Features Section -->
-				<section class="w-full py-20 bg-transparent relative">
-					<div class="max-w-6xl mx-auto px-6 md:px-12">
-						<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-							<style>
-								.spotlight-3d-card {
-									transform-style: preserve-3d;
-									transition: transform 0.3s ease, box-shadow 0.3s ease;
-									box-shadow:
-										0 10px 30px rgba(12, 47, 30, 0.15),
-										0 5px 15px rgba(12, 47, 30, 0.1);
-								}
-								.spotlight-3d-card:hover {
-									transform: translateY(-8px) scale(1.02);
-									box-shadow:
-										0 20px 50px rgba(12, 47, 30, 0.2),
-										0 10px 25px rgba(255, 174, 155, 0.15);
-								}
-							</style>
-							<!-- Card 1: Flexible Account Structures -->
-							<SpotlightCard client:load className="spotlight-3d-card p-6 h-full flex flex-col gap-4 !bg-white !border-gray-200 !text-gray-900" spotlightColor="rgba(255, 174, 155, 0.15)">
-								<div class="h-12 w-12 flex items-center justify-center rounded-lg bg-[#ffae9b]/10 border border-[#ffae9b]/30">
-									<Layers className="text-[#0C2F1E] h-6 w-6" />
-								</div>
-								<div>
-									<h3 class="text-lg font-semibold text-[#0C2F1E] mb-2">Flexible Account Structures</h3>
-									<p class="text-sm text-gray-600 leading-relaxed">
-										Our platform was designed to work with any business type and model, supporting your unique needs.
-									</p>
-								</div>
-							</SpotlightCard>
+				<!-- Green Gradient Section Above Triangle -->
+				<div class="w-full h-[150px] relative pointer-events-none">
+					<div class="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-emerald-500/20 via-emerald-500/10 to-transparent"></div>
+				</div>
 
-							<!-- Card 2: Full Program Management -->
-							<SpotlightCard client:load className="spotlight-3d-card p-6 h-full flex flex-col gap-4 !bg-white !border-gray-200 !text-gray-900" spotlightColor="rgba(255, 174, 155, 0.15)">
-								<div class="h-12 w-12 flex items-center justify-center rounded-lg bg-[#0C2F1E]/10 border border-[#0C2F1E]/30">
-									<ShieldCheck className="text-[#0C2F1E] h-6 w-6" />
-								</div>
-								<div>
-									<h3 class="text-lg font-semibold text-[#0C2F1E] mb-2">Full Program Management</h3>
-									<p class="text-sm text-gray-600 leading-relaxed">
-										We are with you every step of the way, from implementation to ongoing program optimization.
-									</p>
-								</div>
-							</SpotlightCard>
-
-							<!-- Card 3: World-Class Dashboard -->
-							<SpotlightCard client:load className="spotlight-3d-card p-6 h-full flex flex-col gap-4 !bg-white !border-gray-200 !text-gray-900" spotlightColor="rgba(255, 174, 155, 0.15)">
-								<div class="h-12 w-12 flex items-center justify-center rounded-lg bg-[#ffae9b]/10 border border-[#ffae9b]/30">
-									<Zap className="text-[#ffae9b] h-6 w-6" />
-								</div>
-								<div>
-									<h3 class="text-lg font-semibold text-[#0C2F1E] mb-2">World-Class Dashboard</h3>
-									<p class="text-sm text-gray-600 leading-relaxed">
-										Streamline your operations and support your customers from our user-friendly Dashboard.
-									</p>
-								</div>
-							</SpotlightCard>
-
-							<!-- Card 4: Designed for Scale -->
-							<SpotlightCard client:load className="spotlight-3d-card p-6 h-full flex flex-col gap-4 !bg-white !border-gray-200 !text-gray-900" spotlightColor="rgba(255, 174, 155, 0.15)">
-								<div class="h-12 w-12 flex items-center justify-center rounded-lg bg-[#0C2F1E]/10 border border-[#0C2F1E]/30">
-									<TrendingUp className="text-[#0C2F1E] h-6 w-6" />
-								</div>
-								<div>
-									<h3 class="text-lg font-semibold text-[#0C2F1E] mb-2">Designed for Scale</h3>
-									<p class="text-sm text-gray-600 leading-relaxed">
-										Our secure platform scales with you and is trusted by developers, startups, and large corporations.
-									</p>
-								</div>
-							</SpotlightCard>
-						</div>
-					</div>
-				</section>
+				<!-- Triangle Separator -->
+				<div class="w-full relative -mb-1 -mt-[150px]">
+					<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="w-full h-[80px] md:h-[120px]">
+						<path d="M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z" fill="#f5f5f5" fill-opacity="1"></path>
+					</svg>
+				</div>
 
 				<!-- Partners & Purpose Section -->
-				<section class="w-full py-20 bg-white">
-					<div class="max-w-7xl mx-auto px-6 md:px-12">
+				<section class="w-full py-20 bg-[#f5f5f5] relative">
+					<div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
 						<!-- Header Text -->
 						<div class="text-center mb-16">
 							<p class="text-lg md:text-xl text-gray-800 font-medium mb-2">
@@ -193,6 +131,78 @@ import { Layers, ShieldCheck, Zap, TrendingUp } from 'lucide-react';
 								<p class="text-lg md:text-xl text-gray-700 leading-relaxed">
 									Highnote helps reduce costs, drive revenue, and optimize your business for success.
 								</p>
+							</div>
+						</div>
+
+						<!-- Platform Features Grid -->
+						<div class="max-w-6xl mx-auto px-6 md:px-12 mt-16">
+							<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+								<style>
+									.spotlight-3d-card {
+										transform-style: preserve-3d;
+										transition: transform 0.3s ease, box-shadow 0.3s ease;
+										box-shadow:
+											0 10px 30px rgba(12, 47, 30, 0.15),
+											0 5px 15px rgba(12, 47, 30, 0.1);
+									}
+									.spotlight-3d-card:hover {
+										transform: translateY(-8px) scale(1.02);
+										box-shadow:
+											0 20px 50px rgba(12, 47, 30, 0.2),
+											0 10px 25px rgba(255, 174, 155, 0.15);
+									}
+								</style>
+								<!-- Card 1: Flexible Account Structures -->
+								<SpotlightCard client:load className="spotlight-3d-card p-6 h-full flex flex-col gap-4 !bg-white !border-gray-200 !text-gray-900" spotlightColor="rgba(255, 174, 155, 0.15)">
+									<div class="h-12 w-12 flex items-center justify-center rounded-lg bg-[#ffae9b]/10 border border-[#ffae9b]/30">
+										<Layers className="text-[#0C2F1E] h-6 w-6" />
+									</div>
+									<div>
+										<h3 class="text-lg font-semibold text-[#0C2F1E] mb-2">Flexible Account Structures</h3>
+										<p class="text-sm text-gray-600 leading-relaxed">
+											Our platform was designed to work with any business type and model, supporting your unique needs.
+										</p>
+									</div>
+								</SpotlightCard>
+
+								<!-- Card 2: Full Program Management -->
+								<SpotlightCard client:load className="spotlight-3d-card p-6 h-full flex flex-col gap-4 !bg-white !border-gray-200 !text-gray-900" spotlightColor="rgba(255, 174, 155, 0.15)">
+									<div class="h-12 w-12 flex items-center justify-center rounded-lg bg-[#0C2F1E]/10 border border-[#0C2F1E]/30">
+										<ShieldCheck className="text-[#0C2F1E] h-6 w-6" />
+									</div>
+									<div>
+										<h3 class="text-lg font-semibold text-[#0C2F1E] mb-2">Full Program Management</h3>
+										<p class="text-sm text-gray-600 leading-relaxed">
+											We are with you every step of the way, from implementation to ongoing program optimization.
+										</p>
+									</div>
+								</SpotlightCard>
+
+								<!-- Card 3: World-Class Dashboard -->
+								<SpotlightCard client:load className="spotlight-3d-card p-6 h-full flex flex-col gap-4 !bg-white !border-gray-200 !text-gray-900" spotlightColor="rgba(255, 174, 155, 0.15)">
+									<div class="h-12 w-12 flex items-center justify-center rounded-lg bg-[#ffae9b]/10 border border-[#ffae9b]/30">
+										<Zap className="text-[#ffae9b] h-6 w-6" />
+									</div>
+									<div>
+										<h3 class="text-lg font-semibold text-[#0C2F1E] mb-2">World-Class Dashboard</h3>
+										<p class="text-sm text-gray-600 leading-relaxed">
+											Streamline your operations and support your customers from our user-friendly Dashboard.
+										</p>
+									</div>
+								</SpotlightCard>
+
+								<!-- Card 4: Designed for Scale -->
+								<SpotlightCard client:load className="spotlight-3d-card p-6 h-full flex flex-col gap-4 !bg-white !border-gray-200 !text-gray-900" spotlightColor="rgba(255, 174, 155, 0.15)">
+									<div class="h-12 w-12 flex items-center justify-center rounded-lg bg-[#0C2F1E]/10 border border-[#0C2F1E]/30">
+										<TrendingUp className="text-[#0C2F1E] h-6 w-6" />
+									</div>
+									<div>
+										<h3 class="text-lg font-semibold text-[#0C2F1E] mb-2">Designed for Scale</h3>
+										<p class="text-sm text-gray-600 leading-relaxed">
+											Our secure platform scales with you and is trusted by developers, startups, and large corporations.
+										</p>
+									</div>
+								</SpotlightCard>
 							</div>
 						</div>
 					</div>

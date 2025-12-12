@@ -33,11 +33,13 @@ export const InfiniteGridBackground = ({ children, className }: InfiniteGridBack
   const speedX = 0.5;
   const speedY = 0.5;
 
-  useAnimationFrame(() => {
+  useAnimationFrame((t, delta) => {
     const currentX = gridOffsetX.get();
     const currentY = gridOffsetY.get();
-    gridOffsetX.set((currentX + speedX) % 40);
-    gridOffsetY.set((currentY + speedY) % 40);
+    const newX = (currentX + speedX) % 40;
+    const newY = (currentY + speedY) % 40;
+    gridOffsetX.set(newX);
+    gridOffsetY.set(newY);
   });
 
   const maskImage = useMotionTemplate`radial-gradient(400px circle at ${mouseX}px ${mouseY}px, black, transparent)`;
@@ -49,12 +51,12 @@ export const InfiniteGridBackground = ({ children, className }: InfiniteGridBack
       className={cn("relative w-full", className)}
       style={{ minHeight: "100vh" }}
     >
-      {/* Base Grid Layer */}
-      <div className="absolute inset-0 z-0 opacity-[0.08]">
+      {/* Base Animated Grid Layer - Always Visible */}
+      <div className="absolute inset-0 z-0 opacity-[0.5]">
         <GridPattern offsetX={gridOffsetX} offsetY={gridOffsetY} patternId="grid-base" />
       </div>
 
-      {/* Mouse Interactive Grid Layer */}
+      {/* Mouse Interactive Grid Layer - Extra brightness on hover */}
       <motion.div
         className="absolute inset-0 z-0 opacity-50"
         style={{ maskImage, WebkitMaskImage: maskImage }}
@@ -65,7 +67,7 @@ export const InfiniteGridBackground = ({ children, className }: InfiniteGridBack
       {/* Soft Gradient Overlays */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute right-[-10%] top-[-10%] w-[30%] h-[30%] rounded-full bg-emerald-500/20 blur-[100px]" />
-        <div className="absolute left-[-10%] bottom-[-10%] w-[30%] h-[30%] rounded-full bg-teal-500/20 blur-[100px]" />
+        <div className="absolute left-[-10%] bottom-[-10%] w-[30%] h-[30%] rounded-full bg-emerald-500/20 blur-[100px]" />
       </div>
 
       {/* Content */}
